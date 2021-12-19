@@ -1,0 +1,196 @@
+/* 
+--------------------
+    Fonts
+--------------------
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* 
+--------------------
+    Veriable
+--------------------
+*/
+
+:root {
+  /* Primery Color */
+  --primery-clr: #01a1a1;
+
+  /* Font */
+  --ff: "Poppins", sans-serif;
+  --f-clr: #002f2f;
+
+  /* Background Color */
+  --bg-clr: #ffffff;
+  --bg2-clr: #fafaff;
+  --bg3-clr: #cbecf0;
+  --bg4-clr: #d2faff;
+
+  --black-clr: #222;
+  --max-width: 1170px;
+  --fixed-width: 620px;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --spacing-m: 0.5rem;
+  --spacing-l: 1rem;
+  --radius: 1rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+--------------------
+    Global Style  
+--------------------
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 0.5px solid #80808080; */
+}
+
+body {
+  overflow: auto;
+  font-family: var(--ff);
+  background: var(--bg2-clr);
+  background-color: var(--bg2-clr);
+}
+
+body::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg2-clr);
+  margin: auto 15px;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+header {
+  margin-top: 10vh;
+  height: 20vh;
+  width: 100%;
+  text-align: center;
+  color: var(--black-clr);
+}
+
+header h1 {
+  font-size: 4rem;
+  font-weight: 200;
+  color: var(--primery-clr);
+}
+
+.content {
+  width: 95vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  column-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    display: block;
+  }
+  .hero {
+    margin: 5vh 0;
+  }
+  .main{
+    margin: 5vh 0;
+  }
+}
+
+/* .hero {
+} */
+.hero img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+}
+
+.main {
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+}
+.main .btn-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.main .btn-group button {
+  padding: var(--spacing-l) 0;
+  font-size: 1rem;
+  display: block;
+  background: var(--bg3-clr);
+  border: 0;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: var(--transition);
+  font-weight: 500;
+}
+.btn-group button:nth-child(1) {
+  border-radius: var(--radius) 0 0 0;
+}
+.btn-group button:nth-child(3) {
+  border-radius: 0 var(--radius) 0 0;
+}
+.btn-group button:hover {
+  opacity: 0.9;
+  background: var(--bg4-clr);
+  color: var(--primery-clr);
+}
+
+.main .btn-group .active {
+  background-color: var(--bg-clr);
+  color: var(--primery-clr);
+}
+
+.content .content-text div {
+  display: none;
+  height: 0;
+  padding: var(--spacing-l);
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--bg-clr);
+  transition: var(--transition);
+}
+
+.content .content-text .active {
+  display: block;
+  height: auto;
+}
+
+.content .content-text div ul {
+  padding: var(--spacing-l) 0 0 var(--spacing-l);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  background: linear-gradient(0deg, var(--bg2-clr) 0%, rgba(255,255,255,0) 100%);;
+}
+
+footer a {
+    margin: auto auto 0 auto;
+align-self: baseline;
+  padding: 10px 10px 0 10px;
+  font-size: 0.75rem;
+  color: var(--primery-clr);
+}
